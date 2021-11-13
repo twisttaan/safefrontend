@@ -1,0 +1,36 @@
+{
+  "name": "flash",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nestjs/common": "^8.1.2",
+    "@octokit/rest": "^18.12.0",
+    "axios": "^0.24.0",
+    "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
+    "next": "12.0.2",
+    "pusher-js": "^7.0.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-embed-gist": "^1.0.12",
+    "remark": "^14.0.1",
+    "remark-html": "^15.0.0",
+    "sentiment": "^5.0.2",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "16.11.6",
+    "@types/react": "17.0.34",
+    "autoprefixer": "^10.4.0",
+    "eslint": "7",
+    "eslint-config-next": "12.0.2",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19",
+    "typescript": "4.4.4"
+  }
+}
