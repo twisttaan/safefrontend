@@ -41,9 +41,9 @@ const Home: NextPage = () => {
                 Secure Captchas
               </h4>
               <p className="text-base text-center text-gray-500">
-                We use our own simple to complete captchas to make sure you're
-                not a bot, but not make you read your teachers photocopy of the
-                work.
+                We use our own simple to complete captchas to make sure
+                you&apos;re not a bot, but not make you read your teachers
+                photocopy of the work.
               </p>
             </div>
             <div className="flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 bg-gray-100 sm:rounded-xl">
@@ -66,8 +66,8 @@ const Home: NextPage = () => {
               </div>
               <h4 className="text-xl font-medium text-gray-700">Do it once!</h4>
               <p className="text-base text-center text-gray-500">
-                Once you have done a captcha in the past we won't force you to
-                do it again, unless you were found in a raid.
+                Once you have done a captcha in the past we won&apos;t force you
+                to do it again, unless you were found in a raid.
               </p>
             </div>
             <div className="flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 bg-gray-100 sm:rounded-xl">
@@ -117,7 +117,7 @@ const Home: NextPage = () => {
               <h4 className="text-xl font-medium text-gray-700">Public API</h4>
               <p className="text-base text-center text-gray-500">
                 Safecord has a public API for you to use, so you can easily
-                check if a user's captcha completed ratio.
+                check if a user&apos;s captcha completed ratio.
               </p>
             </div>
           </div>
@@ -136,7 +136,7 @@ const Home: NextPage = () => {
                   <br></br>today!
                 </h1>
                 <p className="mx-auto text-base text-gray-300 sm:max-w-md lg:text-xl md:max-w-3xl">
-                  It's never been easier to protect your server!
+                  It&apos;s never been easier to protect your server!
                 </p>
                 <div className="relative flex flex-col sm:flex-row sm:space-x-4">
                   <a
