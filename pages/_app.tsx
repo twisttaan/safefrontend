@@ -32,16 +32,16 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap"
           rel="stylesheet"
         />
-        <title>Evie</title>
-        <meta content="Evie Bot" property="og:title" />
+        <title>Safecord</title>
+        <meta content="Safecord" property="og:title" />
         <meta name="theme-color" content="#7289da" />
         <meta
-          content="Evie is a feature-rich, easy to use Discord bot built to deliver the best experience of a bot on Discord!"
+          content="Safecord, protect that server of yours!"
           property="og:description"
         />
-        <meta content="https://eviebot.rocks" property="og:url" />
+        <meta content="https://safecord.xyz" property="og:url" />
         <meta
-          content="https://eviebot.rocks/assets/EvieIcon.png"
+          content="https://safecord.xyz/assets/EvieIcon.png"
           property="og:image"
         />
         <meta content="#43B581" data-react-helmet="true" name="theme-color" />
