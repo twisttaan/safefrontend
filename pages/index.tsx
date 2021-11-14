@@ -9,194 +9,172 @@ const coolBox: string =
 const Home: NextPage = () => {
   return (
     <div>
-      <div className=" grid justify-items-stretch ...">
-        <div className="justify-self-center ...">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight  mt-10 mb-8 sm:mt-14 sm:mb-10 text-white text-center">
-            It&apos;s time to use Evie in your Discord server.
-          </h1>
-          <br></br>
-          <div className="justify-self-center ...">
-            <p className="text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11 text-center">
-              Evie is a feature-rich, easy to use Discord bot built to deliver
-              the best experience of a bot on Discord!
-            </p>
-
-            <div className="grid justify-items-stretch ...">
-              <div className="justify-self-center ...">
-                <div className="transition duration-500 ease-in-out  hover: transform hover:-translate-y-1 hover:scale-550...">
-                  <div className="hover: transition duration-500 hover:scale-125">
-                    <a
-                      href="https://discord.com/oauth2/authorize?client_id=807543126424158238&permissions=518855707712&scope=bot%20applications.commands"
-                      id="GFG"
-                      className="box-border relative z-30 inline-flex items-center justify-center w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-blurple rounded-md cursor-pointer group ring-offset-2 ring-1 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none"
+      <section className="py-20">
+        <div className="container max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold tracking-tight text-center">
+            Our Features
+          </h2>
+          <p className="mt-2 text-lg text-center text-gray-300">
+            Check out our list of awesome features below.
+          </p>
+          <div className="grid grid-cols-4 gap-8 mt-10 sm:grid-cols-8 lg:grid-cols-12 sm:px-8 xl:px-0">
+            <div className="relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 sm:rounded-xl">
+              <div className="p-3 text-white bg-blue-500 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 h-8 "
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                  <path d="M5 8v-3a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-5" />
+                  <circle cx={6} cy={14} r={3} />
+                  <path d="M4.5 17l-1.5 5l3 -1.5l3 1.5l-1.5 -5" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-medium text-gray-700">
+                Secure Captchas
+              </h4>
+              <p className="text-base text-center text-gray-500">
+                We use our own simple to complete captchas to make sure you're
+                not a bot, but not make you read your teachers photocopy of the
+                work.
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 bg-gray-100 sm:rounded-xl">
+              <div className="p-3 text-white bg-blue-500 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 h-8 "
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M18 8a3 3 0 0 1 0 6" />
+                  <path d="M10 8v11a1 1 0 0 1 -1 1h-1a1 1 0 0 1 -1 -1v-5" />
+                  <path d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-medium text-gray-700">Do it once!</h4>
+              <p className="text-base text-center text-gray-500">
+                Once you have done a captcha in the past we won't force you to
+                do it again, unless you were found in a raid.
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 bg-gray-100 sm:rounded-xl">
+              <div className="p-3 text-white bg-blue-500 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 h-8 "
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+                  <line x1={12} y1={12} x2={20} y2="7.5" />
+                  <line x1={12} y1={12} x2={12} y2={21} />
+                  <line x1={12} y1={12} x2={4} y2="7.5" />
+                  <line x1={16} y1="5.25" x2={8} y2="9.75" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-medium text-gray-700">Modular</h4>
+              <p className="text-base text-center text-gray-500">
+                Safecord is extremely modular, so you can easily configure it
+                the way you want.
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 bg-gray-100 sm:rounded-xl">
+              <div className="p-3 text-white bg-blue-500 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 h-8 "
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M8 9l3 3l-3 3" />
+                  <line x1={13} y1={15} x2={16} y2={15} />
+                  <rect x={3} y={4} width={18} height={16} rx={2} />
+                </svg>
+              </div>
+              <h4 className="text-xl font-medium text-gray-700">Public API</h4>
+              <p className="text-base text-center text-gray-500">
+                Safecord has a public API for you to use, so you can easily
+                check if a user's captcha completed ratio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="px-2 py-32 md:px-0">
+        <div className="container items-center max-w-6xl px-8 mx-auto xl:px-5">
+          <div className="flex flex-wrap items-center sm:-mx-3">
+            <div className="w-full md:w-1/2 md:px-3">
+              <div className="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
+                <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
+                  <span className="block xl:inline">Invite </span>
+                  <span className="block text-indigo-600 xl:inline">
+                    Safecord
+                  </span>
+                  <br></br>today!
+                </h1>
+                <p className="mx-auto text-base text-gray-300 sm:max-w-md lg:text-xl md:max-w-3xl">
+                  It's never been easier to protect your server!
+                </p>
+                <div className="relative flex flex-col sm:flex-row sm:space-x-4">
+                  <a
+                    href="#_"
+                    className="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-indigo-600 rounded-md sm:mb-0 hover:bg-indigo-700 sm:w-auto"
+                  >
+                    Try It Free
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-5 h-5 ml-1"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
-                      <span className="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0" />
-                      <span className="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0" />
-                      <span className="relative z-20 flex items-center text-sm">
-                        <svg
-                          className="relative w-5 h-5 mr-2 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 10V3L4 14h7v7l9-11h-7z"
-                          />
-                        </svg>
-                        Invite Evie
-                      </span>
-                    </a>
-                  </div>
+                      <line x1={5} y1={12} x2={19} y2={12} />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#_"
+                    className="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
+                  >
+                    Learn More
+                  </a>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="header">
-        <svg
-          className="waves"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28"
-          preserveAspectRatio="none"
-          shapeRendering="auto"
-        >
-          <defs>
-            <path
-              id="gentle-wave"
-              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-            />
-          </defs>
-          <g className="parallax">
-            <use
-              xlinkHref="#gentle-wave"
-              x={48}
-              y={0}
-              fill="rgba(255,255,255,0.7"
-            />
-            <use
-              xlinkHref="#gentle-wave"
-              x={48}
-              y={3}
-              fill="rgba(255,255,255,0.5)"
-            />
-            <use
-              xlinkHref="#gentle-wave"
-              x={48}
-              y={5}
-              fill="rgba(255,255,255,0.3)"
-            />
-            <use xlinkHref="#gentle-wave" x={48} y={7} fill="#2c2f33" />
-          </g>
-        </svg>
-      </div>
-      <br></br>
-      <div className="text-5xl leading-none font-extrabold tracking-tight mb-4 text-white text-center">
-        What is Evie all about?
-      </div>
-      <div className="text-2xl tracking-tight mb-10 text-center">
-        Evie is a public moderation/music/fun/economy/utility bot for Discord,
-        designed with modern Discord features like slash commands.
-      </div>
-      <div className="grid justify-items-stretch bg-darkBlurple   ...">
-        <div className="justify-self-center bg-darkBlurple  ...">
-          <div className="rounded-xl ...">
-            <div className="w-full flex md:flex-col bg-gradient-to-br from-blurple to-blurple">
-              <div className="sm:max-w-sm max-w-lg sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8 ">
-                <h5 className="text-xl font-semibold mb-2 text-shadow">
-                  Utilities
-                </h5>
-                <p className="font-medium text-violet-100 text-shadow mb-4 text-left">
-                  <ul>
-                    <li>
-                      Google the internet with{" "}
-                      <code>/google &lt;thing you want to search for&gt;</code>
-                    </li>
-                    <li>
-                      If you ping @Evie✨#1625 she will now respond with a
-                      message on how to use her commands!
-                    </li>
-                    <li>
-                      Need help with any commands <code>/help</code>
-                    </li>
-                  </ul>
-                </p>
-                <img
-                  className="w-200 h-200 rounded-2xl mx-auto text-center"
-                  src="/assets/leaderboard.png"
-                />
-              </div>
-            </div>
-
-            <div className="w-full flex md:flex-col bg-gradient-to-br from-blurple to-blurple">
-              <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
-                <h5 className="text-xl font-semibold mb-2 text-shadow">
-                  $EVIE
-                </h5>
-                <p className="font-medium text-violet-100 text-shadow mb-4 text-left">
-                  <ul>
-                    <li>
-                      See how much $EVIE you have with <code>/bal</code>
-                    </li>
-                    <li>
-                      Vote for a free 10k $EVIE <code>/vote</code>
-                    </li>
-                    <li>
-                      Beg for money with <code>/beg</code>
-                    </li>
-                    <li>
-                      Check who has the most $EVIE <code>/leaderboard</code>
-                    </li>
-                    <li>
-                      <code>/inventory</code> to check your inventory out!
-                    </li>
-                    <li>
-                      Baking! Buy an oven in the <code>/shop</code> then use{" "}
-                      <code>/buy &lt;itemid&gt;</code> and finally, start baking
-                      those muffins with <code>/bake muffin</code> You can also
-                      sell those muffins for money{" "}
-                      <code>/sell &lt;itemid&gt;</code> (if you ever want to
-                      know an item id do <code>/shop</code> to see a list of the
-                      item ids!)
-                    </li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-            <div className="w-full flex md:flex-col bg-gradient-to-br from-blurple to-blurple text-center">
-              <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8 text-center">
-                <h5 className="text-xl font-semibold mb-2 text-shadow text-center">
-                  Moderation
-                </h5>
-                <p className="font-medium text-violet-100 text-shadow mb-4 text-left">
-                  <ul>
-                    <li>
-                      Using the{" "}
-                      <a href="https://dash.eviebot.rocks/">Dashboard</a> set
-                      banned words and/or use our default list of banned words
-                      to protect your Discord server.
-                    </li>
-                    <li>
-                      Welcome new people that join your Discord server and set a
-                      custom message in the{" "}
-                      <a href="https://dash.eviebot.rocks/">Dashboard</a>
-                    </li>
-                    <li>
-                      Change the colour Evie uses for every embed in your server
-                      on the <a href="https://dash.eviebot.rocks/">Dashboard</a>
-                    </li>
-                  </ul>
-                </p>
+            <div className="w-full md:w-1/2">
+              <div className="w-full h-auto overflow-hidden rounded-md shadow-xl sm:rounded-xl">
+                <img src="https://cdn.discordapp.com/attachments/905944865718825053/909269872679215165/unknown.png" />
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
