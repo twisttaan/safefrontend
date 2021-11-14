@@ -94,7 +94,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     Invite Now!
                   </a>
                   <span className="absolute top-0 right-0 px-2 py-1 -mt-3 -mr-6 text-xs font-medium leading-tight text-white bg-green-400 rounded-full">
-                    i want to die
+                    1 servers
                   </span>
                 </span>
                 <a href="#" className="mt-3 text-sm text-indigo-500">
