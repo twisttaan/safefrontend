@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         blurple: "#7289DA",
         darkBlurple: "#2c2f33",
+        embedDark: "#2f3136",
       },
     },
   },
