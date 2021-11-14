@@ -2,11 +2,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
-const coolBox: string =
-  "m-4 p-6 text-left no-underline border-solid border-4 hover:border-opacity-50 border-light-blue-500 rounded-lg text-white max-w-screen-sm";
-
-const Home: NextPage = () => {
+const Sign: NextPage = () => {
   return (
     <div>
       <section className="w-ful">
@@ -68,7 +66,7 @@ const Home: NextPage = () => {
                     <br />
                     <br />
                     <a
-                      href="#_"
+                      href="https://api.safecord.xyz/discord/auth"
                       className="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blurple ease"
                     >
                       Sign in via Discord
@@ -84,4 +82,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Sign;

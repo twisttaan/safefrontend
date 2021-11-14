@@ -1,16 +1,12 @@
 import "tailwindcss/tailwind.css";
-import type { AppProps } from "next/app";
 import Head from "next/head";
-import Contributors from "../react-contributors";
 import Link from "next/link";
+import type {} from "@skyra/discord-components-core";
+import type { NextPage } from "next";
+import type { AppProps } from "next/app";
+import React, { useEffect } from "react";
 
-// Username of the repo owner.
-const owner = "twisttaan";
-
-// Repository name or array with multiple repositories names.
-const repos = ["EvieWeb", "jamble"];
-
-function MyApp({ Component, pageProps }: AppProps) {
+const App: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <div className="App">
       <Head>
@@ -21,18 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
 
         <link rel="stylesheet" href="/legacy.css" />
-        <link
-          href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800,900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap"
-          rel="stylesheet"
-        />
+
         <title>Safecord</title>
         <meta content="Safecord" property="og:title" />
         <meta name="theme-color" content="#7289da" />
@@ -231,6 +216,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </div>
     </div>
   );
-}
+};
 
-export default MyApp;
+export default App;
