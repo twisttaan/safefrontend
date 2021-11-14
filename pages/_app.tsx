@@ -2,6 +2,7 @@ import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Contributors from "../react-contributors";
+import Link from "next/link";
 
 // Username of the repo owner.
 const owner = "twisttaan";
@@ -69,22 +70,20 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <div className="bg-darkblurple">
         <nav className="relative flex flex-wrap items-center content-between py-3 px-4  bg-transparent">
-          <a
-            href="/"
-            className="transition duration-500 ease-in-out  hover: transform hover:-translate-y-1 hover:scale-150 ..."
-          >
-            <img src="/s.png" width="60" height="60" />
-          </a>
+          <Link href="/">
+            <a className="transition duration-500 ease-in-out  hover: transform hover:-translate-y-1 hover:scale-150 ...">
+              <img src="/s.png" width="60" height="60" />
+            </a>
+          </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a
-            href="/signin"
-            className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blurple rounded-full hover:bg-white group"
-          >
-            <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
-            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
-              Login
-            </span>
-          </a>
+          <Link href="/signin">
+            <a className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blurple rounded-full hover:bg-white group">
+              <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+              <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+                Login
+              </span>
+            </a>
+          </Link>
           &nbsp;&nbsp;&nbsp;
           <a
             href="https://discord.gg/qMdgpsgmYC"
