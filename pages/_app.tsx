@@ -68,42 +68,36 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#7289da" />
       </Head>
       <div className="bg-darkblurple">
-        <section className="w-full px-6 pb-12 antialiased">
-          <div className="mx-auto max-w-7xl ">
-            {/* Main Hero Content */}
-            <div className="container max-w-lg px-4 py-32 mx-auto text-left md:max-w-none md:text-center">
-              <h1 className="text-5xl font-extrabold leading-10 tracking-tight text-left text-white md:text-center sm:leading-none md:text-6xl lg:text-7xl">
-                <span className="inline md:block">
-                  Protect your server with
-                </span>{" "}
-                <span className="relative mt-2 text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-indigo-500 md:inline-block">
-                  Safecord
-                </span>
-                🔒
-              </h1>
-              <div className="mx-auto mt-5 text-gray-300 md:mt-12 md:max-w-lg md:text-center lg:text-lg">
-                screen every user with our amazing cool captcha thingo
-              </div>
-              <div className="flex flex-col items-center mt-12 text-center">
-                <span className="relative inline-flex w-full md:w-auto">
-                  <a
-                    href="#_"
-                    type="button"
-                    className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold leading-6 text-white bg-indigo-600 border border-transparent rounded-full md:w-auto hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
-                  >
-                    Invite Now!
-                  </a>
-                  <span className="absolute top-0 right-0 px-2 py-1 -mt-3 -mr-6 text-xs font-medium leading-tight text-white bg-green-400 rounded-full">
-                    1 servers
-                  </span>
-                </span>
-                <a href="#" className="mt-3 text-sm text-indigo-500">
-                  Learn More
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <nav className="relative flex flex-wrap items-center content-between py-3 px-4  bg-transparent">
+          <a
+            href="/"
+            className="transition duration-500 ease-in-out  hover: transform hover:-translate-y-1 hover:scale-150 ..."
+          >
+            <img src="/s.png" width="60" height="60" />
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a
+            href="/signin"
+            className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blurple rounded-full hover:bg-white group"
+          >
+            <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+              Login
+            </span>
+          </a>
+          &nbsp;&nbsp;&nbsp;
+          <a
+            href="https://discord.gg/qMdgpsgmYC"
+            className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blurple rounded-full hover:bg-white group"
+          >
+            <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+              Support Server
+            </span>
+          </a>
+        </nav>
+        <br />
+        <br />
         <Component {...pageProps} />
         <section className="">
           <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
