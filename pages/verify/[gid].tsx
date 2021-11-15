@@ -19,8 +19,6 @@ const Verify: NextPage = () => {
   const [loading, setLoading] = useState(true);
 
   async function onVerifyCaptcha(this: any, token: string) {
-    this.setState({ isVerified: true });
-
     const data = await axios.post('https://api.safecord.xyz/verify/hcaptcha', {
       'h-captcha-response': token,
       'guild-id': router.query.gid
