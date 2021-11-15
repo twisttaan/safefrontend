@@ -2,7 +2,7 @@ import axios from "axios";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import HC from "@hcaptcha/react-hcaptcha";
 import Image from "next/image";
 const snowflake = require("discord-snowflake");
 
@@ -17,6 +17,11 @@ const Verify: NextPage = () => {
   const router = useRouter();
   const [user, setUser] = useState<User>();
   const [loading, setLoading] = useState(true);
+
+  function onVerifyCaptcha(this: any, token: string) {
+    console.log("Verified: " + token);
+    this.setState({ isVerified: true });
+  }
 
   useEffect(() => {
     if (router.isReady) {
@@ -53,48 +58,61 @@ const Verify: NextPage = () => {
       <section className="w-ful">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col lg:flex-row">
-            <div className="relative w-full bg-cover lg:w-6/12 xl:w-7/12 bg-darkBlurple">
+            <div className="relative w-full bg-cover lg:w-6/12 xl:w-7/12 bg-blurple">
               <div className="relative flex flex-col items-center justify-center w-full h-full px-10 my-20 lg:px-16 lg:my-0">
                 <div className="flex flex-col items-start space-y-8 tracking-tight lg:max-w-3xl">
                   <div className="relative">
-                    <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                      <Image
-                        className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-                        src={
-                          `https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}` ??
-                          "https://eviebot.rocks/assets/EvieHead.svg/"
-                        }
-                        alt=""
-                        width="512"
-                        height="512"
-                      />
-                      <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
-                        <figcaption className="font-medium">
-                          <div className="text-blurple">{user?.username}</div>
-                          <div className="text-gray-500">
-                            Account made{" "}
-                            {new Date(snowflake(user?.id)).toDateString()}
-                          </div>
-                        </figcaption>
-                      </div>
-                    </figure>
+                    <p className="mb-2 font-medium text-wite uppercase">
+                      Start Today
+                    </p>
+                    <h2 className="text-5xl font-bold text-white xl:text-6xl">
+                      Start protecting your server today!
+                    </h2>
+                  </div>
+                  <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
+                    <Image
+                      className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+                      src={`https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}.png`}
+                      alt=""
+                      width="512"
+                      height="512"
+                    />
+                    <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
+                      <figcaption className="font-medium">
+                        <div className="text-blurple">{user?.username}</div>
+                        <div className="text-gray-500">
+                          Account made{" "}
+                          {new Date(snowflake(user?.id)).toDateString()}
+                        </div>
+                      </figcaption>
+                    </div>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div className="w-full bg-white lg:w-6/12 xl:w-5/12">
+              <div className="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
+                <span className="relative mt-2 text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-indigo-500 md:inline-block text-5xl font-extrabold leading-10 tracking-tight text-lef md:text-center sm:leading-none md:text-6xl lg:text-7xl">
+                  Safecord
+                </span>
+                <div className="relative w-full mt-10 space-y-8">
+                  <div className="relative"></div>
+                  <div className="relative">
+                    <Image
+                      className="w-32 h-32 md:w-48 md:h-auto mx-auto"
+                      src="/hcaptcha.svg"
+                      alt=""
+                      width="384"
+                      height="512"
+                    />
                     <br />
-                    <div className="relative">
-                      <label className="font-medium text-white">
-                        You must verify your a human to continue.
-                      </label>
-                    </div>
-                    <div className="flex flex-col items-center mt-12 text-center">
-                      <span className="transition duration-500 ease-in-out  hover: transform hover:-translate-y-1 hover:scale-550... relative inline-flex w-full md:w-auto">
-                        <a
-                          href="#_"
-                          type="button"
-                          className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold leading-6 text-white bg-indigo-600 border border-transparent rounded-full md:w-auto hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
-                        >
-                          Verify!
-                        </a>
-                      </span>
-                    </div>
+                    <br />
+                    <HC
+                      sitekey="f99abb01-7e75-49a8-85b6-7c14959ee8c2"
+                      onVerify={onVerifyCaptcha}
+                      size="compact"
+                      theme="dark"
+                    />
                   </div>
                 </div>
               </div>
