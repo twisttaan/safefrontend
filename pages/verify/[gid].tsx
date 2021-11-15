@@ -17,7 +17,7 @@ const Verify: NextPage = () => {
   const router = useRouter();
   const [user, setUser] = useState<User>();
   const [loading, setLoading] = useState(true);
-  const sD = snowflake(user?.id) as Date;
+  const sD = new Date(snowflake(user?.id));
 
   useEffect(() => {
     if (router.isReady) {
