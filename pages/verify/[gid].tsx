@@ -21,7 +21,7 @@ const Verify: NextPage = () => {
   async function onVerifyCaptcha(this: any, token: string) {
     const data = await axios.post('https://api.safecord.xyz/verify/hcaptcha', {
       'h-captcha-response': token,
-      'guild-id': router.query.gid
+      'guild_id': router.query.gid
     }, {
       headers: {
         'Content-Type': 'application/json'
