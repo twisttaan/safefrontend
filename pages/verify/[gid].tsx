@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Image from "next/image";
+const snowflake = require("discord-snowflake");
 
 interface User {
   id: string;
@@ -16,6 +17,8 @@ const Verify: NextPage = () => {
   const router = useRouter();
   const [user, setUser] = useState<User>();
   const [loading, setLoading] = useState(true);
+  const sD = snowflake(user?.id) as Date;
+  const eD: Date = new Date((Date.now() - sD.getMilliseconds()) / 1000);
 
   useEffect(() => {
     if (router.isReady) {
@@ -60,7 +63,7 @@ const Verify: NextPage = () => {
                       <Image
                         className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
                         src={
-                          user?.avatar ??
+                          `https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}` ??
                           "https://eviebot.rocks/assets/EvieHead.svg/"
                         }
                         alt=""
@@ -71,7 +74,7 @@ const Verify: NextPage = () => {
                         <figcaption className="font-medium">
                           <div className="text-blurple">{user?.username}</div>
                           <div className="text-gray-500">
-                            Account made 1 year ago
+                            Account made {sD.toLocaleDateString()} ago
                           </div>
                         </figcaption>
                       </div>
