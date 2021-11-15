@@ -72,7 +72,7 @@ const Verify: NextPage = () => {
                   <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
                     <img
                       className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-                      src={`https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}.png`}
+                      src={`https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}.${user?.avatar?.startsWith("_a") ? "gif" : "png"}`}
                       alt={`${user?.username}'s Profile Picture`}
                       width="512"
                       height="512"
