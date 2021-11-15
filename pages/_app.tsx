@@ -5,6 +5,8 @@ import type {} from "@skyra/discord-components-core";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import React, { useEffect } from "react";
+import "../public/legacy.css";
+import Image from "next/image";
 
 const App: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -15,8 +17,6 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
-        <link rel="stylesheet" href="/legacy.css" />
 
         <title>Safecord</title>
         <meta content="Safecord" property="og:title" />
@@ -57,7 +57,12 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
         <nav className="relative flex flex-wrap items-center content-between py-3 px-4  bg-transparent">
           <Link href="/">
             <a className="transition duration-500 ease-in-out  hover: transform hover:-translate-y-1 hover:scale-150 ...">
-              <img src="/s.png" width="60" height="60" />
+              <Image
+                alt="Safecord Safe Logo"
+                src="/s.png"
+                width="60"
+                height="60"
+              />
             </a>
           </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
