@@ -29,7 +29,7 @@ const Verify: NextPage = () => {
   // TODO: Loading animation
 
   while (loading) { 
-    return <p>Loading...</p>
+    return <p>Loading....</p>
   }
 
   return (
