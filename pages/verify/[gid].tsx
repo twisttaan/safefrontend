@@ -18,7 +18,6 @@ const Verify: NextPage = () => {
   const [user, setUser] = useState<User>();
   const [loading, setLoading] = useState(true);
   const sD = snowflake(user?.id) as Date;
-  const eD: Date = new Date((Date.now() - sD.getMilliseconds()) / 1000);
 
   useEffect(() => {
     if (router.isReady) {
@@ -74,7 +73,7 @@ const Verify: NextPage = () => {
                         <figcaption className="font-medium">
                           <div className="text-blurple">{user?.username}</div>
                           <div className="text-gray-500">
-                            Account made {sD.toLocaleDateString()} ago
+                            Account made {sD.toLocaleDateString()}
                           </div>
                         </figcaption>
                       </div>
