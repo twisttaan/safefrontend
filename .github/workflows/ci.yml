@@ -1,7 +1,7 @@
-name: CI
+name: linty
 on: push
 jobs:
-  build:
+  linting:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
