@@ -70,7 +70,7 @@ const Verify: NextPage = () => {
                     </h2>
                   </div>
                   <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                    <Image
+                    <img
                       className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
                       src={`https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}.png`}
                       alt={`${user?.username}'s Profile Picture`}
@@ -80,8 +80,7 @@ const Verify: NextPage = () => {
                     <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
                       <figcaption className="font-medium">
                         <div className="text-blurple font-bold">
-                          Name: {user?.username}
-                          {`https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}.png`}
+                          {user?.username}
                         </div>
                         <div className="text-gray-500">
                           Account made{" "}
