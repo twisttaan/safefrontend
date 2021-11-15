@@ -17,7 +17,6 @@ const Verify: NextPage = () => {
   const router = useRouter();
   const [user, setUser] = useState<User>();
   const [loading, setLoading] = useState(true);
-  const sD = new Date(snowflake(user?.id));
 
   useEffect(() => {
     if (router.isReady) {
@@ -73,7 +72,8 @@ const Verify: NextPage = () => {
                         <figcaption className="font-medium">
                           <div className="text-blurple">{user?.username}</div>
                           <div className="text-gray-500">
-                            Account made {sD.toLocaleDateString()}
+                            Account made{" "}
+                            {new Date(snowflake(user?.id)).toDateString()}
                           </div>
                         </figcaption>
                       </div>
