@@ -81,8 +81,7 @@ const Verify: NextPage = () => {
                       <figcaption className="font-medium">
                         <div className="text-blurple font-bold">
                           Name: {user?.username}
-                          ID: {user?.id}
-                          Avatar: {user?.avatar}
+                          {`https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}.png`}
                         </div>
                         <div className="text-gray-500">
                           Account made{" "}
@@ -107,7 +106,7 @@ const Verify: NextPage = () => {
                       src="/s.png"
                       alt=""
                       width="384"
-                      height="512"
+                      height="384"
                     />
                     <br />
                     <br />
