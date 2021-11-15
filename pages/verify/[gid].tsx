@@ -63,23 +63,27 @@ const Verify: NextPage = () => {
                 <div className="flex flex-col items-start space-y-8 tracking-tight lg:max-w-3xl">
                   <div className="relative">
                     <p className="mb-2 font-medium text-wite uppercase">
-                      Start Today
+                      Verify Gateway
                     </p>
                     <h2 className="text-5xl font-bold text-white xl:text-6xl">
-                      Start protecting your server today!
+                      Tristan&apos;s Discord Server
                     </h2>
                   </div>
                   <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
                     <Image
                       className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
                       src={`https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}.png`}
-                      alt=""
+                      alt={`${user?.username}'s Profile Picture`}
                       width="512"
                       height="512"
                     />
                     <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
                       <figcaption className="font-medium">
-                        <div className="text-blurple">{user?.username}</div>
+                        <div className="text-blurple font-bold">
+                          Name: {user?.username}
+                          ID: {user?.id}
+                          Avatar: {user?.avatar}
+                        </div>
                         <div className="text-gray-500">
                           Account made{" "}
                           {new Date(snowflake(user?.id)).toDateString()}
@@ -100,7 +104,7 @@ const Verify: NextPage = () => {
                   <div className="relative">
                     <Image
                       className="w-32 h-32 md:w-48 md:h-auto mx-auto"
-                      src="/hcaptcha.svg"
+                      src="/s.png"
                       alt=""
                       width="384"
                       height="512"
@@ -110,7 +114,6 @@ const Verify: NextPage = () => {
                     <HC
                       sitekey="f99abb01-7e75-49a8-85b6-7c14959ee8c2"
                       onVerify={onVerifyCaptcha}
-                      size="compact"
                       theme="dark"
                     />
                   </div>
