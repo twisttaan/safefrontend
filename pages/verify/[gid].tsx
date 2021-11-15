@@ -21,7 +21,7 @@ const Verify: NextPage = () => {
         .then((res) => {
           setUser(res.data);
           setLoading(false);
-        }).catch(console.warn);
+        }).catch(() => router.push(`https://api.safecord.xyz/discord/auth?redirect=/verify/${router.query.gid}`))
     }
   }, [router.isReady, router])
 
@@ -29,7 +29,7 @@ const Verify: NextPage = () => {
   // TODO: Loading animation
 
   while (loading) { 
-    return <p>Loading....</p>
+    return <p>Loading..</p>
   }
 
   return (
