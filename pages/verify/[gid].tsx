@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import Image from "next/image";
 
 interface User {
   id: string;
@@ -56,9 +57,12 @@ const Verify: NextPage = () => {
                 <div className="flex flex-col items-start space-y-8 tracking-tight lg:max-w-3xl">
                   <div className="relative">
                     <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                      <img
+                      <Image
                         className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-                        src={user?.avatar}
+                        src={
+                          user?.avatar ??
+                          "https://eviebot.rocks/assets/EvieHead.svg/"
+                        }
                         alt=""
                         width="512"
                         height="512"
