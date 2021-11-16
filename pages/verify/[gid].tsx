@@ -92,9 +92,7 @@ const Verify: NextPage = () => {
         },
       }
     );
-    console.trace(token);
-
-    console.log(data.data);
+    console.log(token);
   }
 
   return (
