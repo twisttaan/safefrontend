@@ -55,14 +55,12 @@ const Verify: NextPage = () => {
           return axios
             .get<Guild>(
               `https://api.safecord.xyz/discord/guilds/${router.query.gid}`
-            )
-            .then((res) => {
-              setGuild(res.data);
-              setLoading(false);
-            })
-            .catch(() => setFake(true));
-        })
-        .catch(() =>
+            ).catch(() => setFake(true));
+        }).then((res) => {
+          if (!res) return;
+          setGuild(res.data);
+          setLoading(false);
+        }).catch(() =>
           router.push(
             `https://api.safecord.xyz/discord/auth?redirect=/verify/${router.query.gid}`
           )
