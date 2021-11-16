@@ -103,7 +103,7 @@ const Verify: NextPage = () => {
                     </h2>
                   </div>
                   <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                    <Image
+                    <img
                       className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
                       src={`https://cdn.discordapp.com/avatars/${user?.id}/${
                         user?.avatar
