@@ -26,23 +26,6 @@ const Verify: NextPage = () => {
   const [guild, setGuild] = useState<Guild>();
   const [loading, setLoading] = useState(true);
   const [fake, setFake] = useState(false);
-  async function onVerifyCaptcha(this: any, token: string) {
-    const data = await axios.post(
-      "https://api.safecord.xyz/verify/hcaptcha",
-      {
-        "h-captcha-response": token,
-        guild_id: router.query.gid,
-        user_id: user!.id,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    console.log(data.data);
-  }
 
   useEffect(() => {
     if (router.isReady) {
@@ -93,6 +76,25 @@ const Verify: NextPage = () => {
         Hey it seems like that guild oesn&apos;t exist.
       </div>
     );
+  }
+
+  async function onVerifyCaptcha(this: any, token: string) {
+    const data = await axios.post(
+      "https://api.safecord.xyz/verify/hcaptcha",
+      {
+        "h-captcha-response": token,
+        guild_id: router.query.gid,
+        user_id: user?.id,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.trace(token);
+
+    console.log(data.data);
   }
 
   return (
