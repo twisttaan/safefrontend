@@ -194,7 +194,10 @@ const Home: NextPage = () => {
                       </blockquote>
                       <figcaption className="font-medium">
                         <div className="text-blurple">Crawl</div>
-                        <div className="text-gray-500">discord.js, Earth</div>
+                        <div className="text-gray-500">
+                          This is only a placeholder and is all fake, we
+                          don&apos;t have any reviews yet..
+                        </div>
                       </figcaption>
                     </div>
                   </figure>
