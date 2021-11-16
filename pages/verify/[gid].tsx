@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import HC from "@hcaptcha/react-hcaptcha";
 import Image from "next/image";
-const snowflake = require("discord-snowflake");
+import { getTimestamp } from "../../utils/utils";
 
 interface User {
   id: string;
@@ -79,7 +79,7 @@ const Verify: NextPage = () => {
                     </h2>
                   </div>
                   <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                    <img
+                    <Image
                       className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
                       src={`https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}.${user?.avatar?.startsWith("_a") ? "gif" : "png"}`}
                       alt={`${user?.username}'s Profile Picture`}
@@ -93,7 +93,7 @@ const Verify: NextPage = () => {
                         </div>
                         <div className="text-gray-500">
                           Account made{" "}
-                          {new Date(snowflake(user?.id)).toDateString()}
+                          {new Date(getTimestamp(user?.id as string)).toDateString()}
                         </div>
                       </figcaption>
                     </div>

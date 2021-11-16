@@ -1442,11 +1442,6 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
-discord-snowflake@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/discord-snowflake/-/discord-snowflake-1.0.1.tgz#dc31d5a22226f06e3e0febccb77226244a3eaa47"
-  integrity sha512-jmzsv9K1Ewc4J5HxTIGHKpGPmPByrQqdE6HQcflbthIkDef1nIgufGTcK0rVXtE+Z+c1Zripi0PKRqO9ef2HZQ==
-
 dlv@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/dlv/-/dlv-1.1.3.tgz#5c198a8a11453596e751494d49874bc7732f2e79"
