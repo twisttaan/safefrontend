@@ -52,7 +52,7 @@ const Verify: NextPage = () => {
         })
         .then((res) => {
           setUser(res.data);
-          axios
+          return axios
             .get<Guild>(
               `https://api.safecord.xyz/discord/guilds/${router.query.gid}`
             )
