@@ -26,7 +26,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
         />
         <meta content="https://www.safecord.xyz/" property="og:url" />
         <meta content="https://www.safecord.xyz/s.png" property="og:image" />
-        <meta content="#000000" data-react-helmet="true" name="theme-color" />
+        <meta content="#000001" data-react-helmet="true" name="theme-color" />
 
         <link
           rel="apple-touch-icon"
