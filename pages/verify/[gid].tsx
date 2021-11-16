@@ -6,6 +6,13 @@ import HC from "@hcaptcha/react-hcaptcha";
 import Image from "next/image";
 import { getTimestamp } from "../../utils/utils";
 
+interface Guild {
+  guild: {
+    avatar_url: string;
+    guild_id: string;
+    name: string;
+  };
+}
 interface User {
   id: string;
   username: string;
@@ -16,20 +23,25 @@ interface User {
 const Verify: NextPage = () => {
   const router = useRouter();
   const [user, setUser] = useState<User>();
+  const [guild, setGuild] = useState<Guild>();
   const [loading, setLoading] = useState(true);
-
+  const [fake, setFake] = useState(false);
   async function onVerifyCaptcha(this: any, token: string) {
-    const data = await axios.post('https://api.safecord.xyz/verify/hcaptcha', {
-      'h-captcha-response': token,
-      'guild_id': router.query.gid,
-      'user_id': user!.id,
-    }, {
-      headers: {
-        'Content-Type': 'application/json'
+    const data = await axios.post(
+      "https://api.safecord.xyz/verify/hcaptcha",
+      {
+        "h-captcha-response": token,
+        guild_id: router.query.gid,
+        user_id: user!.id,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
-    })
-    
-    console.log(data.data)
+    );
+
+    console.log(data.data);
   }
 
   useEffect(() => {
@@ -40,7 +52,15 @@ const Verify: NextPage = () => {
         })
         .then((res) => {
           setUser(res.data);
-          setLoading(false);
+          axios
+            .get<Guild>(
+              `https://api.safecord.xyz/discord/guilds/${router.query.gid}`
+            )
+            .then((res) => {
+              setGuild(res.data);
+              setLoading(false);
+            })
+            .catch(() => setFake(true));
         })
         .catch(() =>
           router.push(
@@ -52,13 +72,17 @@ const Verify: NextPage = () => {
 
   while (loading) {
     return (
-      <button type="button" className="bg-rose-600 ..." disabled>
-        <svg
-          className="animate-spin h-5 w-5 mr-3 ..."
-          viewBox="0 0 24 24"
-        ></svg>
-        Loading
-      </button>
+      <div className="flex justify-center items-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500" />
+      </div>
+    );
+  }
+
+  while (fake) {
+    return (
+      <div className="flex justify-center items-center">
+        Hey it seems like that guild oesn&apos;t exist.
+      </div>
     );
   }
 
@@ -75,13 +99,15 @@ const Verify: NextPage = () => {
                       Verify Gateway
                     </p>
                     <h2 className="text-5xl font-bold text-white xl:text-6xl">
-                      Tristan&apos;s Discord Server
+                      {guild?.guild.name}
                     </h2>
                   </div>
                   <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
                     <Image
                       className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-                      src={`https://cdn.discordapp.com/avatars/${user?.id}/${user?.avatar}.${user?.avatar?.startsWith("_a") ? "gif" : "png"}`}
+                      src={`https://cdn.discordapp.com/avatars/${user?.id}/${
+                        user?.avatar
+                      }.${user?.avatar?.startsWith("_a") ? "gif" : "png"}`}
                       alt={`${user?.username}'s Profile Picture`}
                       width="512"
                       height="512"
@@ -93,7 +119,9 @@ const Verify: NextPage = () => {
                         </div>
                         <div className="text-gray-500">
                           Account made{" "}
-                          {new Date(getTimestamp(user?.id as string)).toDateString()}
+                          {new Date(
+                            getTimestamp(user?.id as string)
+                          ).toDateString()}
                         </div>
                       </figcaption>
                     </div>
