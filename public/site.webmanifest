@@ -1,6 +1,6 @@
 {
-    "name": "Evie",
-    "short_name": "Evie",
+    "name": "Safecord",
+    "short_name": "Safecord",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#7289da",
-    "background_color": "#7289da",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
     "display": "standalone"
 }

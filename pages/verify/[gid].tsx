@@ -46,16 +46,24 @@ const Verify: NextPage = () => {
 
   useEffect(() => {
     if (router.isReady) {
-
       async function handleRequests() {
-        const user = await axios.get<User>("https://api.safecord.xyz/discord/user", {
-          withCredentials: true,
-        }).catch(() => {});
+        const user = await axios
+          .get<User>("https://api.safecord.xyz/discord/user", {
+            withCredentials: true,
+          })
+          .catch(() => {});
 
-        if (!user) return router.push(`https://api.safecord.xyz/discord/auth?redirect=/verify/${router.query.gid}`);
+        if (!user)
+          return router.push(
+            `https://api.safecord.xyz/discord/auth?redirect=/verify/${router.query.gid}`
+          );
         setUser(user.data);
 
-        const guild = await axios.get<Guild>(`https://api.safecord.xyz/discord/guilds/${router.query.gid}`).catch(() => {});
+        const guild = await axios
+          .get<Guild>(
+            `https://api.safecord.xyz/discord/guilds/${router.query.gid}`
+          )
+          .catch(() => {});
 
         if (!guild) {
           setFake(true);

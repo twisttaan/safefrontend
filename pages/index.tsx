@@ -11,7 +11,6 @@ const Home: NextPage = () => {
     <div>
       <section className="w-full px-6 pb-12 antialiased">
         <div className="mx-auto max-w-7xl ">
-          {/* Main Hero Content */}
           <div className="container max-w-lg px-4 py-32 mx-auto text-left md:max-w-none md:text-center">
             <h1 className="text-5xl font-extrabold leading-10 tracking-tight text-left text-white md:text-center sm:leading-none md:text-6xl lg:text-7xl">
               <span className="inline md:block">Protect your server with</span>{" "}
@@ -30,6 +29,7 @@ const Home: NextPage = () => {
                   type="button"
                   className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold leading-6 text-white bg-indigo-600 border border-transparent rounded-full md:w-auto hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                 >
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-5"></span>
                   Invite Now!
                 </a>
                 <span className="absolute top-0 right-0 px-2 py-1 -mt-3 -mr-6 text-xs font-medium leading-tight text-white bg-green-400 rounded-full">
@@ -157,53 +157,76 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      <section className="px-2 py-32 md:px-0">
-        <div className="container items-center max-w-6xl px-8 mx-auto xl:px-5">
-          <div className="flex flex-wrap items-center sm:-mx-3">
-            <div className="w-full md:w-1/2 md:px-3">
-              <div className="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
-                <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-                  <span className="block xl:inline">Invite </span>
-                  <span className="block text-indigo-600 xl:inline">
-                    Safecord
-                  </span>
-                  <br></br>today!
-                </h1>
-                <p className="mx-auto text-base text-gray-300 sm:max-w-md lg:text-xl md:max-w-3xl">
-                  It&apos;s never been easier to protect your server!
-                </p>
-                <div className="relative flex flex-col sm:flex-row sm:space-x-4">
-                  <a
-                    href="#_"
-                    className="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-indigo-600 rounded-md sm:mb-0 hover:bg-indigo-700 sm:w-auto"
-                  >
-                    Try It Free
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5 ml-1"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1={5} y1={12} x2={19} y2={12} />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </a>
-                  <a
-                    href="#_"
-                    className="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
-                  >
-                    Learn More
-                  </a>
+      <section className="w-ful">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col lg:flex-row">
+            <div className="relative w-full bg-cover lg:w-6/12 xl:w-7/12 bg-blurple">
+              <div className="relative flex flex-col items-center justify-center w-full h-full px-10 my-20 lg:px-16 lg:my-0">
+                <div className="flex flex-col items-start space-y-8 tracking-tight lg:max-w-3xl">
+                  <div className="relative">
+                    <p className="mb-2 font-medium text-wite uppercase">
+                      Start Today
+                    </p>
+                    <h2 className="text-5xl font-bold text-white xl:text-6xl">
+                      Start protecting your server today!
+                    </h2>
+                  </div>
+                  <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
+                    <Image
+                      className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+                      src="https://avatars.githubusercontent.com/u/20760160?v=4"
+                      alt=""
+                      width="384"
+                      height="512"
+                    />
+                    <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
+                      <blockquote>
+                        <p className="text-lg font-semibold text-black">
+                          “Safecord helped protect my{" "}
+                          <a
+                            className="no-underline hover:underline text-blurple"
+                            href="https://discord.gg/djs"
+                          >
+                            server
+                          </a>{" "}
+                          from about 1,000,000 spammers.”
+                        </p>
+                      </blockquote>
+                      <figcaption className="font-medium">
+                        <div className="text-blurple">Crawl</div>
+                        <div className="text-gray-500">discord.js, Earth</div>
+                      </figcaption>
+                    </div>
+                  </figure>
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-1/2">
-              <div className="w-full h-auto overflow-hidden rounded-md shadow-xl sm:rounded-xl">
-                <img src="https://cdn.discordapp.com/attachments/905944865718825053/909269872679215165/unknown.png" />
+            <div className="w-full bg-white lg:w-6/12 xl:w-5/12">
+              <div className="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
+                <span className="relative mt-2 text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-indigo-500 md:inline-block text-5xl font-extrabold leading-10 tracking-tight text-lef md:text-center sm:leading-none md:text-6xl lg:text-7xl">
+                  Safecord
+                </span>
+
+                <div className="relative w-full mt-10 space-y-8">
+                  <div className="relative"></div>
+                  <div className="relative">
+                    <img
+                      className="w-32 h-32 md:w-48 md:h-auto mx-auto animate-spin"
+                      src="/s.png"
+                      alt=""
+                      width="384"
+                      height="512"
+                    />
+                    <br />
+                    <br />
+                    <a
+                      href="https://api.safecord.xyz/discord/invite"
+                      className="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blurple ease"
+                    >
+                      Invite Safecord
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

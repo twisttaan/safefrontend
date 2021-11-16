@@ -20,17 +20,14 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 
         <title>Safecord</title>
         <meta content="Safecord" property="og:title" />
-        <meta name="theme-color" content="#7289da" />
         <meta
-          content="Safecord, protect that server of yours!"
+          content="keeping that server of yours safe"
           property="og:description"
         />
-        <meta content="https://safecord.xyz" property="og:url" />
-        <meta
-          content="https://safecord.xyz/assets/EvieIcon.png"
-          property="og:image"
-        />
-        <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+        <meta content="https://www.safecord.xyz/" property="og:url" />
+        <meta content="https://www.safecord.xyz/s.png" property="og:image" />
+        <meta content="#000000" data-react-helmet="true" name="theme-color" />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -49,9 +46,9 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7289da" />
-        <meta name="msapplication-TileColor" content="#7289da" />
-        <meta name="theme-color" content="#7289da" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <div className="bg-darkblurple">
         <nav className="relative flex flex-wrap items-center content-between py-3 px-4  bg-transparent">
@@ -66,15 +63,6 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
             </a>
           </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Link href="/signin">
-            <a className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blurple rounded-full hover:bg-white group">
-              <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
-              <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
-                Login
-              </span>
-            </a>
-          </Link>
-          &nbsp;&nbsp;&nbsp;
           <a
             href="https://discord.gg/qMdgpsgmYC"
             className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blurple rounded-full hover:bg-white group"
