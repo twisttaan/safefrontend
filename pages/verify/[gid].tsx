@@ -73,7 +73,7 @@ const Verify: NextPage = () => {
   while (fake) {
     return (
       <div className="flex justify-center items-center">
-        Hey it seems like that guild oesn&apos;t exist.
+        Hey it seems like that guild doesn&apos;t exist.
       </div>
     );
   }
