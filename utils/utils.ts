@@ -1,4 +1,4 @@
-// EXTRACTED FROM DJS INTERNALS
+// Credit for idToBinary goes to discord.js , don't ask me to explain this code
 // https://github.com/discordjs/discord.js/blob/5ec04e077bbbb9799f3ef135cade84b77346ef20/src/util/SnowflakeUtil.js#62
 
 export function getTimestamp(snowflake: string) {
