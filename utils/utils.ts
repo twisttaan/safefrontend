@@ -21,3 +21,4 @@ export function idToBinary(num: string) {
   }
   return bin;
 }
+
