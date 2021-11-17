@@ -120,7 +120,7 @@ const Verify: NextPage = () => {
 
   while (success === true) {
     return (
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center">
         verified!
         <br />
         <svg
