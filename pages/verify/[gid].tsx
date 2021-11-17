@@ -62,7 +62,7 @@ const Verify: NextPage = () => {
             user_id: user.data.id,
           }).catch(() => {});
 
-        if (getVerified) {
+        if (getVerified?.data.verified) {
           setVerified(true);
         }
 
