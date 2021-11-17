@@ -142,7 +142,7 @@ const Verify: NextPage = () => {
                           {new Date(
                             getTimestamp(user?.id as string)
                           ).toDateString()}
-                          Account verified: {verified}
+                          Account verified: {verified ? 'Verified!' : 'Not verified!'}
                         </div>
                       </figcaption>
                     </div>
