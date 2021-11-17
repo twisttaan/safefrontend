@@ -24,6 +24,7 @@ const Verify: NextPage = () => {
   const router = useRouter();
   const [user, setUser] = useState<User>();
   const [guild, setGuild] = useState<Guild>();
+  const [verified, setVerified] = useState(false);
   const [loading, setLoading] = useState(true);
   const [fake, setFake] = useState(false);
 
@@ -54,6 +55,16 @@ const Verify: NextPage = () => {
         }
 
         setGuild(guild.data);
+
+        const getVerified = await axios
+          .post<{verified: boolean}>('https://api.safecord.xyz/discord/isverfied', {
+            guild_id: router.query.gid,
+            member_id: user.data.id,
+          }).catch(() => {});
+
+        if (getVerified) {
+          setVerified(true);
+        }
 
         setLoading(false);
       }
@@ -131,6 +142,7 @@ const Verify: NextPage = () => {
                           {new Date(
                             getTimestamp(user?.id as string)
                           ).toDateString()}
+                          Account verified: {verified}
                         </div>
                       </figcaption>
                     </div>
