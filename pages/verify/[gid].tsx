@@ -58,10 +58,14 @@ const Verify: NextPage = () => {
         setGuild(guild.data);
 
         const getVerified = await axios
-          .post<{verified: boolean}>('https://api.safecord.xyz/discord/isverified', {
-            guild_id: router.query.gid,
-            user_id: user.data.id,
-          }).catch(() => {});
+          .post<{ verified: boolean }>(
+            "https://api.safecord.xyz/discord/isverified",
+            {
+              guild_id: router.query.gid,
+              user_id: user.data.id,
+            }
+          )
+          .catch(() => {});
 
         if (getVerified?.data.verified) {
           setVerified(true);
@@ -91,19 +95,21 @@ const Verify: NextPage = () => {
   }
 
   async function onVerifyCaptcha(this: any, token: string) {
-    const data = await axios.post(
-      "https://api.safecord.xyz/verify/hcaptcha",
-      {
-        "h-captcha-response": token,
-        guild_id: router.query.gid,
-        user_id: user?.id,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
+    const data = await axios
+      .post(
+        "https://api.safecord.xyz/verify/hcaptcha",
+        {
+          "h-captcha-response": token,
+          guild_id: router.query.gid,
+          user_id: user?.id,
         },
-      }
-    ).catch(console.log);
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .catch(console.log);
 
     if (data) {
       setSuccess(true);
@@ -113,11 +119,37 @@ const Verify: NextPage = () => {
   }
 
   while (success === true) {
-    return <p> If you&apos;re seeing this that means you sucessfully verified! </p>
+    return (
+      <div className="flex justify-center items-center">
+        Hey it seems like that guild doesn&apos;t exist.
+        <svg
+          className="checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 52 52"
+        >
+          <circle
+            className="checkmark__circle"
+            cx="26"
+            cy="26"
+            r="25"
+            fill="none"
+          />
+          <path
+            className="checkmark__check"
+            fill="none"
+            d="M14.1 27.2l7.1 7.2 16.7-16.8"
+          />
+        </svg>
+      </div>
+    );
   }
 
   while (success === false) {
-    return <p> If you&apos;re seeing this that something went wrong! </p>
+    return (
+      <div className="flex justify-center items-center">
+        Hey it seems like that guild doesn&apos;t exist.
+      </div>
+    );
   }
 
   return (
@@ -156,7 +188,8 @@ const Verify: NextPage = () => {
                           {new Date(
                             getTimestamp(user?.id as string)
                           ).toDateString()}
-                          Account verified: {verified ? 'Verified!' : 'Not verified!'}
+                          Account verified:{" "}
+                          {verified ? "Verified!" : "Not verified!"}
                         </div>
                       </figcaption>
                     </div>
