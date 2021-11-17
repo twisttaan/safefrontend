@@ -121,6 +121,7 @@ const Verify: NextPage = () => {
   while (success === true) {
     return (
       <div className="flex justify-center items-center">
+        verified!
         <svg
           className="checkmark"
           xmlns="http://www.w3.org/2000/svg"
@@ -139,6 +140,7 @@ const Verify: NextPage = () => {
             d="M14.1 27.2l7.1 7.2 16.7-16.8"
           />
         </svg>
+        you may close this tab now.
       </div>
     );
   }
