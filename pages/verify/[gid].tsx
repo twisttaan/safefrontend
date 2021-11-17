@@ -89,7 +89,7 @@ const Verify: NextPage = () => {
   while (fake) {
     return (
       <div className="flex justify-center items-center">
-        Hey it seems like that guild doesn&apos;t exist.
+        Hey it seems like that server doesn&apos;t exist on Safecord.
       </div>
     );
   }
@@ -121,7 +121,6 @@ const Verify: NextPage = () => {
   while (success === true) {
     return (
       <div className="flex justify-center items-center">
-        Hey it seems like that guild doesn&apos;t exist.
         <svg
           className="checkmark"
           xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +146,7 @@ const Verify: NextPage = () => {
   while (success === false) {
     return (
       <div className="flex justify-center items-center">
-        Hey it seems like that guild doesn&apos;t exist.
+        Hey it seems like you have already verified for this server.
       </div>
     );
   }
@@ -188,7 +187,8 @@ const Verify: NextPage = () => {
                           {new Date(
                             getTimestamp(user?.id as string)
                           ).toDateString()}
-                          Account verified:{" "}
+                          <br />
+                          Member Status for {guild?.guild.name}:{" "}
                           {verified ? "Verified!" : "Not verified!"}
                         </div>
                       </figcaption>
