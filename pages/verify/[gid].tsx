@@ -27,6 +27,7 @@ const Verify: NextPage = () => {
   const [verified, setVerified] = useState(false);
   const [loading, setLoading] = useState(true);
   const [fake, setFake] = useState(false);
+  const [success, setSuccess] = useState<boolean>();
 
   useEffect(() => {
     if (router.isReady) {
@@ -102,8 +103,21 @@ const Verify: NextPage = () => {
           "Content-Type": "application/json",
         },
       }
-    );
-    console.log(data?.data);
+    ).catch(console.log);
+
+    if (data) {
+      setSuccess(true);
+    } else {
+      setSuccess(false);
+    }
+  }
+
+  while (success === true) {
+    return <p> If you&apos;re seeing this that means you sucessfully verified! </p>
+  }
+
+  while (success === false) {
+    return <p> If you&apos;re seeing this that something went wrong! </p>
   }
 
   return (
