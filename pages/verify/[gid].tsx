@@ -57,7 +57,7 @@ const Verify: NextPage = () => {
         setGuild(guild.data);
 
         const getVerified = await axios
-          .post<{verified: boolean}>('https://api.safecord.xyz/discord/isverfied', {
+          .post<{verified: boolean}>('https://api.safecord.xyz/discord/isverified', {
             guild_id: router.query.gid,
             member_id: user.data.id,
           }).catch(() => {});
