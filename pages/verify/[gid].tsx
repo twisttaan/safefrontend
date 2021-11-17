@@ -120,8 +120,11 @@ const Verify: NextPage = () => {
 
   while (success === true) {
     return (
-      <div className="flex justify-center">
+      <div className="text-center">
         verified!
+      </div>
+      <div className="flex justify-center">
+        
         <br />
         <svg
           className="checkmark"
@@ -142,7 +145,10 @@ const Verify: NextPage = () => {
           />
         </svg>
         <br />
+        <div className="text-center">
         you may close this tab now.
+      </div>
+        
       </div>
     );
   }
