@@ -157,56 +157,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      <section className="w-ful">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col lg:flex-row">
-            <div className="relative w-full bg-cover lg:w-6/12 xl:w-7/12 bg-blurple">
-              <div className="relative flex flex-col items-center justify-center w-full h-full px-10 my-20 lg:px-16 lg:my-0">
-                <div className="flex flex-col items-start space-y-8 tracking-tight lg:max-w-3xl">
-                  <div className="relative">
-                    <p className="mb-2 font-medium text-wite uppercase">
-                      Start Today
-                    </p>
-                    <h2 className="text-5xl font-bold text-white xl:text-6xl">
-                      Start protecting your server today!
-                    </h2>
-                  </div>
-                  <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                    <Image
-                      className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-                      src="https://avatars.githubusercontent.com/u/20760160?v=4"
-                      alt=""
-                      width="384"
-                      height="512"
-                    />
-                    <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
-                      <blockquote>
-                        <p className="text-lg font-semibold text-black">
-                          “Safecord helped protect my{" "}
-                          <a
-                            className="no-underline hover:underline text-blurple"
-                            href="https://discord.gg/djs"
-                          >
-                            server
-                          </a>{" "}
-                          from about 1,000,000 spammers.”
-                        </p>
-                      </blockquote>
-                      <figcaption className="font-medium">
-                        <div className="text-blurple">Crawl</div>
-                        <div className="text-gray-500">
-                          This is only a placeholder and is all fake, we
-                          don&apos;t have any reviews yet..
-                        </div>
-                      </figcaption>
-                    </div>
-                  </figure>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
