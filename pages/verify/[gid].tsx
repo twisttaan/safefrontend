@@ -25,10 +25,10 @@ const Verify: NextPage = () => {
   const [user, setUser] = useState<User>();
   const [guild, setGuild] = useState<Guild>();
   const [verified, setVerified] = useState(false);
+  const [alreadyVerified, setalreadyVerified] = useState(false);
   const [loading, setLoading] = useState(true);
   const [fake, setFake] = useState(false);
   const [success, setSuccess] = useState<boolean>();
-
   useEffect(() => {
     if (router.isReady) {
       async function handleRequests() {
@@ -68,7 +68,7 @@ const Verify: NextPage = () => {
           .catch(() => {});
 
         if (getVerified?.data.verified) {
-          setVerified(true);
+          setalreadyVerified(true);
         }
 
         setLoading(false);
@@ -152,6 +152,14 @@ const Verify: NextPage = () => {
   while (success === false) {
     return (
       <div className="flex justify-center items-center">
+        Hey it seems like something went wrong. Please report this in our
+        support server.
+      </div>
+    );
+  }
+  while (alreadyVerified === true) {
+    return (
+      <div className="flex justify-center items-center">
         Hey it seems like you have already verified for this server.
       </div>
     );
@@ -193,9 +201,6 @@ const Verify: NextPage = () => {
                           {new Date(
                             getTimestamp(user?.id as string)
                           ).toDateString()}
-                          <br />
-                          Member Status for {guild?.guild.name}:{" "}
-                          {verified ? "Verified!" : "Not verified!"}
                         </div>
                       </figcaption>
                     </div>
