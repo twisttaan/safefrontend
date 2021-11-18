@@ -204,34 +204,6 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full bg-white lg:w-6/12 xl:w-5/12">
-              <div className="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
-                <span className="relative mt-2 text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-indigo-500 md:inline-block text-5xl font-extrabold leading-10 tracking-tight text-lef md:text-center sm:leading-none md:text-6xl lg:text-7xl">
-                  Safecord
-                </span>
-
-                <div className="relative w-full mt-10 space-y-8">
-                  <div className="relative"></div>
-                  <div className="relative">
-                    <img
-                      className="w-32 h-32 md:w-48 md:h-auto mx-auto animate-spin"
-                      src="/s.png"
-                      alt=""
-                      width="384"
-                      height="512"
-                    />
-                    <br />
-                    <br />
-                    <a
-                      href="https://api.safecord.xyz/discord/invite"
-                      className="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blurple ease"
-                    >
-                      Invite Safecord
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
