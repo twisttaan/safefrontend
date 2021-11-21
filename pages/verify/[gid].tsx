@@ -182,7 +182,7 @@ const Verify: NextPage = () => {
                     </h2>
                   </div>
                   <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                    <img
+                    <Image
                       className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
                       src={`https://cdn.discordapp.com/avatars/${user?.id}/${
                         user?.avatar
@@ -218,7 +218,11 @@ const Verify: NextPage = () => {
                   <div className="relative">
                     <Image
                       className="w-32 h-32 md:w-48 md:h-auto mx-auto"
-                      src="/s.png"
+                      src={`https://cdn.discordapp.com/avatars/${
+                        guild?.guild.guild_id
+                      }/${guild?.guild.avatar_url}.${
+                        guild?.guild.avatar_url.startsWith("_a") ? "gif" : "png"
+                      }`}
                       alt=""
                       width="384"
                       height="384"
