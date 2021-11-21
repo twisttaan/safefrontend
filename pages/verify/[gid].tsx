@@ -25,6 +25,7 @@ interface User {
 
 const Verify: NextPage = () => {
   const router = useRouter();
+  const [guildImg, setGuildImg] = useState("/assets/clyde.png");
   const [user, setUser] = useState<User>();
   const [guild, setGuild] = useState<Guild>();
   const [verified, setVerified] = useState(false);
@@ -81,6 +82,9 @@ const Verify: NextPage = () => {
       }
 
       handleRequests();
+      if (guild?.guild.avatar_url) {
+        setGuildImg(guild?.guild.avatar_url);
+      }
     }
   }, [router.isReady, router]);
 
@@ -310,11 +314,7 @@ const Verify: NextPage = () => {
                   <div className="relative">
                     <img
                       className="w-32 h-32 md:w-48 md:h-auto mx-auto"
-                      src={`https://cdn.discordapp.com/icons/${
-                        guild?.guild.guild_id
-                      }/${guild?.guild.avatar_url}.${
-                        guild?.guild.avatar_url.startsWith("_a") ? "gif" : "png"
-                      }`}
+                      src={guild?.guild.avatar_url}
                       alt=""
                       width="384"
                       height="384"
