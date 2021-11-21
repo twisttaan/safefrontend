@@ -10,11 +10,9 @@ import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationIcon } from "@heroicons/react/outline";
 
 interface Guild {
-  guild: {
-    avatar_url: string;
-    guild_id: string;
-    name: string;
-  };
+  avatar_url: string;
+  guild_id: string;
+  name: string;
 }
 interface User {
   id: string;
@@ -51,28 +49,26 @@ const Verify: NextPage = () => {
           );
         setUser(user.data);
 
-        const guild = await axios
-          .get<Guild>(
-            `https://api.safecord.xyz/discord/guilds/${router.query.gid}`
-          )
-          .catch(() => {});
-
-        if (!guild) {
-          setFake(true);
-          return setLoading(false);
-        }
-
-        setGuild(guild.data);
-
         const getVerified = await axios
-          .post<{ verified: boolean }>(
-            "https://api.safecord.xyz/discord/isverified",
+          .post<{ verified: boolean, guild: Guild }>(
+            "https://api.safecord.xyz/discord/verification",
             {
               guild_id: router.query.gid,
               user_id: user.data.id,
             }
           )
           .catch(() => {});
+
+          if (!getVerified?.data.guild) {
+            setFake(true);
+            return setLoading(false);
+          } else {
+            setGuild(getVerified.data.guild);
+
+            if (getVerified.data.guild.avatar_url) {
+              setGuildImg(getVerified.data.guild.avatar_url);
+            }
+          }
 
         if (getVerified?.data.verified) {
           setalreadyVerified(true);
@@ -82,9 +78,7 @@ const Verify: NextPage = () => {
       }
 
       handleRequests();
-      if (guild?.guild.avatar_url) {
-        setGuildImg(guild?.guild.avatar_url);
-      }
+      
     }
   }, [router.isReady, router]);
 
@@ -222,7 +216,7 @@ const Verify: NextPage = () => {
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
                           It seems like you already have the set verified role
-                          in {guild?.guild.name}
+                          in {guild?.name}
                         </p>
                       </div>
                     </div>
@@ -266,7 +260,7 @@ const Verify: NextPage = () => {
                       Verify Gateway
                     </p>
                     <h2 className="text-5xl font-bold text-white xl:text-6xl">
-                      {guild?.guild.name}
+                      {guild?.name}
                     </h2>
                   </div>
                   <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
@@ -314,7 +308,7 @@ const Verify: NextPage = () => {
                   <div className="relative">
                     <img
                       className="w-32 h-32 md:w-48 md:h-auto mx-auto rounded-full"
-                      src={guild?.guild.avatar_url}
+                      src={guild?.avatar_url}
                       alt=""
                       width="384"
                       height="384"
