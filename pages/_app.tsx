@@ -71,6 +71,14 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
             <nav className="flex flex-wrap justify-center -mx-5 -my-2">
               <div className="px-5 py-2">
                 <a
+                  href="https://discord.com/api/oauth2/authorize?client_id=908904270978494514&permissions=402656272&scope=bot%20applications.commands"
+                  className="text-base leading-6 text-gray-500 hover:text-gray-900"
+                >
+                  Use Safecord in Your Server
+                </a>
+              </div>
+              <div className="px-5 py-2">
+                <a
                   href="https://discord.gg/r5jF68pdHd"
                   className="text-base leading-6 text-gray-500 hover:text-gray-900"
                 >
