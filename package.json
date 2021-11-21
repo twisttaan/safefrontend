@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@hcaptcha/react-hcaptcha": "^0.3.9",
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
     "@nestjs/common": "^8.1.2",
     "@octokit/rest": "^18.12.0",
     "@skyra/discord-components-core": "^2.12.0",
