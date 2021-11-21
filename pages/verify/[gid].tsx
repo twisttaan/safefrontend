@@ -313,7 +313,7 @@ const Verify: NextPage = () => {
                   <div className="relative"></div>
                   <div className="relative">
                     <img
-                      className="w-32 h-32 md:w-48 md:h-auto mx-auto"
+                      className="w-32 h-32 md:w-48 md:h-auto mx-auto rounded-full"
                       src={guild?.guild.avatar_url}
                       alt=""
                       width="384"
