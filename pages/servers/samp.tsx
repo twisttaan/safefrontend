@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 interface Guild {
   id: string;
   name: string;
-  icon: string | null;
+  icon: string;
   owner: boolean;
   permissions: string;
 }
@@ -30,20 +30,46 @@ const ServersPage: NextPage = () => {
   useEffect(() => {
     if (router.isReady) {
       const runRequests = async () => {
-        const getGuilds = await axios
-          .get<{ mutualGuilds: Guild[]; rest: Guild[] }>(
-            "https://api.safecord.xyz/discord/guilds",
-            { withCredentials: true }
-          )
-          .catch(() => {});
+        setGuilds([
+          {
+            id: "901426442242498650",
+            name: "Beta Evie Testing",
+            icon: "9dbbdc7bc792541b6ff5a70393143357",
+            owner: true,
+            permissions: "1099511627775",
+          },
+          {
+            id: "908908168682299413",
+            name: "Safecord 🔒",
+            icon: "fad1ad14bb3abd06c31078934397db6f",
+            owner: false,
+            permissions: "1099511627775",
+          },
+        ]);
+        setRestGuilds([
+          {
+            id: "574067956762411049",
+            name: "Tristan Studios",
+            icon: "d809bb118f07ed6786648fac0cded9aa",
+            owner: true,
+            permissions: "1099511627775",
+          },
 
-        if (!getGuilds)
-          return router.push(
-            `https://api.safecord.xyz/discord/auth?redirect=/verify/${router.query.gid}`
-          );
-
-        setGuilds(getGuilds.data.mutualGuilds);
-        setRestGuilds(getGuilds.data.rest);
+          {
+            id: "800977362757091329",
+            name: "Evie",
+            icon: "a_5f1ad6d1f72046612b33758d3c0b7c83",
+            owner: true,
+            permissions: "1099511627775",
+          },
+          {
+            id: "807927235478421534",
+            name: "Old Evie Support Discord Server",
+            icon: "ad2790e3ec96130579d20f47f562290b",
+            owner: true,
+            permissions: "1099511627775",
+          },
+        ]);
       };
 
       runRequests();
