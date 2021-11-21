@@ -200,7 +200,15 @@ const Verify: NextPage = () => {
                           Account made{" "}
                           {new Date(
                             getTimestamp(user?.id as string)
-                          ).toDateString()}
+                          ).toLocaleTimeString("en-US", {
+                            hour12: true,
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                            hour: "numeric",
+                            minute: "numeric",
+                          })}
                         </div>
                       </figcaption>
                     </div>
