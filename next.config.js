@@ -5,7 +5,7 @@ module.exports = {
 
 module.exports = {
   images: {
-    domains: ["avatars.githubusercontent.com", "cdn.discordapp.com"],
+    domains: ["avatars.githubusercontent.com"],
   },
   async redirects() {
     return [
