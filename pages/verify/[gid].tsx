@@ -188,8 +188,8 @@ const Verify: NextPage = () => {
                         user?.avatar
                       }.${user?.avatar?.startsWith("_a") ? "gif" : "png"}`}
                       alt={`${user?.username}'s Profile Picture`}
-                      width="512"
-                      height="512"
+                      width="1080"
+                      height="1080"
                     />
                     <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
                       <figcaption className="font-medium">
@@ -218,7 +218,7 @@ const Verify: NextPage = () => {
                   <div className="relative">
                     <Image
                       className="w-32 h-32 md:w-48 md:h-auto mx-auto"
-                      src={`https://cdn.discordapp.com/avatars/${
+                      src={`https://cdn.discordapp.com/icons/${
                         guild?.guild.guild_id
                       }/${guild?.guild.avatar_url}.${
                         guild?.guild.avatar_url.startsWith("_a") ? "gif" : "png"
