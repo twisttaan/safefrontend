@@ -98,6 +98,77 @@ const Verify: NextPage = () => {
 
   while (fake) {
     return (
+      <div className="flex justify-center items-center">
+        Hey it seems like this server doesn&apos;t exist on Safecord.
+      </div>
+    );
+  }
+
+  async function onVerifyCaptcha(this: any, token: string) {
+    const data = await axios
+      .post(
+        "https://api.safecord.xyz/verify/hcaptcha",
+        {
+          "h-captcha-response": token,
+          guild_id: router.query.gid,
+          user_id: user?.id,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .catch(console.log);
+
+    if (data) {
+      setSuccess(true);
+    } else {
+      setSuccess(false);
+    }
+  }
+
+  while (success === true) {
+    return (
+      <>
+        <div className="text-center">verified!</div>
+        <div className="flex justify-center">
+          <br />
+          <svg
+            className="checkmark"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 52 52"
+          >
+            <circle
+              className="checkmark__circle"
+              cx="26"
+              cy="26"
+              r="25"
+              fill="none"
+            />
+            <path
+              className="checkmark__check"
+              fill="none"
+              d="M14.1 27.2l7.1 7.2 16.7-16.8"
+            />
+          </svg>
+          <br />
+        </div>
+        <div className="text-center">you may close this tab now.</div>
+      </>
+    );
+  }
+
+  while (success === false) {
+    return (
+      <div className="flex justify-center items-center">
+        Hey it seems like something went wrong. Please report this in our
+        support server.
+      </div>
+    );
+  }
+  while (alreadyVerified === true) {
+    return (
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
@@ -179,77 +250,6 @@ const Verify: NextPage = () => {
           </div>
         </Dialog>
       </Transition.Root>
-    );
-  }
-
-  async function onVerifyCaptcha(this: any, token: string) {
-    const data = await axios
-      .post(
-        "https://api.safecord.xyz/verify/hcaptcha",
-        {
-          "h-captcha-response": token,
-          guild_id: router.query.gid,
-          user_id: user?.id,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      )
-      .catch(console.log);
-
-    if (data) {
-      setSuccess(true);
-    } else {
-      setSuccess(false);
-    }
-  }
-
-  while (success === true) {
-    return (
-      <>
-        <div className="text-center">verified!</div>
-        <div className="flex justify-center">
-          <br />
-          <svg
-            className="checkmark"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 52 52"
-          >
-            <circle
-              className="checkmark__circle"
-              cx="26"
-              cy="26"
-              r="25"
-              fill="none"
-            />
-            <path
-              className="checkmark__check"
-              fill="none"
-              d="M14.1 27.2l7.1 7.2 16.7-16.8"
-            />
-          </svg>
-          <br />
-        </div>
-        <div className="text-center">you may close this tab now.</div>
-      </>
-    );
-  }
-
-  while (success === false) {
-    return (
-      <div className="flex justify-center items-center">
-        Hey it seems like something went wrong. Please report this in our
-        support server.
-      </div>
-    );
-  }
-  while (alreadyVerified === true) {
-    return (
-      <div className="flex justify-center items-center">
-        Hey it seems like you have already verified for this server.
-      </div>
     );
   }
 
